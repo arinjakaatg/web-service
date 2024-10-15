@@ -7,14 +7,14 @@ pipeline {
     }
     
     parameters {
-        string(name: 'NameOfBuild', defaultValue: 'Alphorm', description: 'This is a name of your build')
-        choice(name: 'ENVIRONMENT', choices:['LOCAL', 'DEVELOPMENT', 'RECETTE', 'INTEGRATION', 'PRODUCTION'], description: 'Choice your environement')
+        string(name: 'NAMEOFBRANCH', defaultValue: 'develop', description: 'Branch to build')
+        choice(name: 'ENVIRONMENT', choices:['LOCAL', 'DEVELOPMENT', 'RECETTE', 'INTEGRATION', 'PRODUCTION'], description: 'Environement to deploy')
     }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Build'
+                echo "You want to build the *${params.NAMEOFBRANCH}* branch"
             }
         }
 
