@@ -8,7 +8,7 @@ pipeline {
     
     parameters {
         string(name: 'NameOfBuild', defaultValue: 'Alphorm', description: 'This is a name of your build')
-        choice(name: 'ENVIRONMENT', choices:['LOCAL', 'DEVELOPMENT', 'RECETTE', 'INTEGRATION'? 'PRODUCTION'], description: 'Choice your environement')
+        choice(name: 'ENVIRONMENT', choices:['LOCAL', 'DEVELOPMENT', 'RECETTE', 'INTEGRATION', 'PRODUCTION'], description: 'Choice your environement')
     }
 
     stages {
