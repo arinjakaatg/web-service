@@ -14,8 +14,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '''pwd
-                ls -lart'''
+                sh 'Build'
             }
         }
 
