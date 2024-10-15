@@ -8,7 +8,7 @@ pipeline {
     
     parameters {
         string(name: 'NameOfBuild', defaultValue: 'Alphorm', description: 'This is a name of your build')
-        choice(name: 'EnvironmentDeploy', choices:['Local', 'Development', 'Recette'], description: 'Your Choice')
+        choice(name: 'ENVIRONMENT', choices:['LOCAL', 'DEVELOPMENT', 'RECETTE', 'INTEGRATION'? 'PRODUCTION'], description: 'Choice your environement')
     }
 
     stages {
@@ -27,7 +27,7 @@ pipeline {
         stage('Deploy') {
             when {
                 expression {
-                    params.EnvironmentDeploy == 'Local'
+                    params.ENVIRONMENT == 'LOCAL'
                 }
             }
             steps {
